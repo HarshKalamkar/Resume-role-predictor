@@ -1,19 +1,16 @@
 from flask import Flask, render_template, request, url_for
 import pickle
-import fitz  # PyMuPDF
+import fitz
 import re
 import os
 
 app = Flask(__name__)
 
-# --- Model and Vectorizer Loading ---
-# (Your model loading code remains the same)
 with open("model/trained_model.pkl", "rb") as f:
     model = pickle.load(f)
 with open("model/tfidf_vectorizer.pkl", "rb") as f:
     tfidf = pickle.load(f)
 
-# (Your helper functions remain the same)
 def clean_text(text):
     text = re.sub(r'\W', ' ', text)
     text = text.lower()
@@ -36,7 +33,6 @@ def predict_role_from_text(text):
     confidence = round(proba[idx] * 100, 2)
     return role, confidence
 
-# --- Flask Routes ---
 @app.route("/")
 def home():
     """Renders the main upload page."""
