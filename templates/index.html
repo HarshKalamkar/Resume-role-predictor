@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Role Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="root">
+        <header>
+            <div class="container text-center">
+                <div class="header-title-group">
+                    <div class="header-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4.5 4.5 0 0 0-4.5 4.5c0 1.43 1.9 2.5 1.9 2.5s-1.9 1.07-1.9 2.5A4.5 4.5 0 0 0 12 16a4.5 4.5 0 0 0 4.5-4.5c0-1.43-1.9-2.5-1.9-2.5s1.9-1.07 1.9-2.5A4.5 4.5 0 0 0 12 2Z"/><path d="M12 16v1a2 2 0 0 0 2 2h1"/><path d="M12 16v1a2 2 0 0 1-2 2H9"/><path d="M12 2v1a2 2 0 0 1-2-2H9"/><path d="M12 2v1a2 2 0 0 0 2-2h1"/></svg>
+                    </div>
+                    <h1 class="gradient-text">Resume Role Predictor</h1>
+                </div>
+                <p class="header-description">
+                    Upload your resume PDF and let our advanced AI instantly predict the most suitable job role for you. 
+                    Our machine learning model analyzes your skills, experience, and keywords to match you with the perfect career path.
+                </p>
+            </div>
+        </header>
+
+        <main>
+            <div class="container">
+                <div class="main-content-wrapper">
+                    <div class="upload-section">
+                        <h2 class="section-title">Find Your Career Path</h2>
+                        <div class="tags-container">
+                             <div class="tag-item">
+                                <svg class="tag-icon accent" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                                <span>Natural Language Processing</span>
+                            </div>
+                            <div class="tag-item">
+                                <svg class="tag-icon primary" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6-11.5A2 2 0 0 0 1.938 0a2.002 2.002 0 0 0-1.438 3.5l11.5 6A2 2 0 0 0 14.063 8.5l-1.125 2.125 2.125 1.125A2 2 0 0 0 16.5 9.5l6-11.5A2 2 0 0 0 21.938 0a2.002 2.002 0 0 0-1.438 3.5l-11.5 6A2 2 0 0 0 7.5 10.5l1.125-2.125-2.125-1.125A2 2 0 0 0 5 8.5l-1.5 2.875a2 2 0 0 0 2.875 1.5l1.5-2.875zm0 0 4.625-2.375m-4.625 2.375L4.5 19.5m5.437-4L15.5 4.5M3 21.5l1.5-2.875m17 2.875-1.5-2.875M9.5 15.5l-6 11.5m17-11.5-6 11.5"/></svg>
+                                <span>Machine Learning</span>
+                            </div>
+                            <div class="tag-item">
+                                <svg class="tag-icon accent" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4.5 4.5 0 0 0-4.5 4.5c0 1.43 1.9 2.5 1.9 2.5s-1.9 1.07-1.9 2.5A4.5 4.5 0 0 0 12 16a4.5 4.5 0 0 0 4.5-4.5c0-1.43-1.9-2.5-1.9-2.5s1.9-1.07 1.9-2.5A4.5 4.5 0 0 0 12 2Z"/><path d="M12 16v1a2 2 0 0 0 2 2h1"/><path d="M12 16v1a2 2 0 0 1-2 2H9"/><path d="M12 2v1a2 2 0 0 1-2-2H9"/><path d="M12 2v1a2 2 0 0 0 2-2h1"/></svg>
+                                <span>AI Career Matching</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <form action="/predict" method="post" enctype="multipart/form-data" class="upload-form">
+                        <label for="resume-upload" class="file-upload-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
+                            <h3 id="file-name-display">Upload Your Resume</h3>
+                            <p class="upload-text-muted">Drag and drop your PDF file here, or click to browse</p>
+                            <p class="upload-text-support">Supports PDF files up to 10MB</p>
+                            <input type="file" name="resume" id="resume-upload" accept=".pdf" required>
+                        </label>
+                        <button type="submit" class="button-predict">
+                            Predict Role
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <section class="features-section">
+            <div class="container">
+                <h3 class="section-title">Why Choose Our AI Predictor?</h3>
+                <div class="features-grid">
+                    <div class="glass-card">
+                         <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4.5 4.5 0 0 0-4.5 4.5c0 1.43 1.9 2.5 1.9 2.5s-1.9 1.07-1.9 2.5A4.5 4.5 0 0 0 12 16a4.5 4.5 0 0 0 4.5-4.5c0-1.43-1.9-2.5-1.9-2.5s1.9-1.07 1.9-2.5A4.5 4.5 0 0 0 12 2Z"/><path d="M12 16v1a2 2 0 0 0 2 2h1"/><path d="M12 16v1a2 2 0 0 1-2 2H9"/><path d="M12 2v1a2 2 0 0 1-2-2H9"/><path d="M12 2v1a2 2 0 0 0 2-2h1"/></svg>
+                        <h4>Advanced AI</h4>
+                        <p>State-of-the-art machine learning algorithms trained on thousands of resumes</p>
+                    </div>
+                    <div class="glass-card">
+                        <svg class="feature-icon accent" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                        <h4>Instant Results</h4>
+                        <p>Get accurate job role predictions in seconds, not hours</p>
+                    </div>
+                    <div class="glass-card">
+                         <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6-11.5A2 2 0 0 0 1.938 0a2.002 2.002 0 0 0-1.438 3.5l11.5 6A2 2 0 0 0 14.063 8.5l-1.125 2.125 2.125 1.125A2 2 0 0 0 16.5 9.5l6-11.5A2 2 0 0 0 21.938 0a2.002 2.002 0 0 0-1.438 3.5l-11.5 6A2 2 0 0 0 7.5 10.5l1.125-2.125-2.125-1.125A2 2 0 0 0 5 8.5l-1.5 2.875a2 2 0 0 0 2.875 1.5l1.5-2.875zm0 0 4.625-2.375m-4.625 2.375L4.5 19.5m5.437-4L15.5 4.5M3 21.5l1.5-2.875m17 2.875-1.5-2.875M9.5 15.5l-6 11.5m17-11.5-6 11.5"/></svg>
+                        <h4>High Accuracy</h4>
+                        <p>95%+ accuracy rate in matching candidates to suitable roles</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container text-center">
+                <p>Powered by Advanced AI & Machine Learning © 2025 Resume Role Predictor</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const fileInput = document.getElementById('resume-upload');
+        const fileNameDisplay = document.getElementById('file-name-display');
+        
+        fileInput.addEventListener('change', function() {
+            if (this.files.length > 0) {
+                fileNameDisplay.textContent = this.files[0].name;
+            } else {
+                fileNameDisplay.textContent = 'Upload Your Resume';
+            }
+        });
+    </script>
+</body>
+</html>

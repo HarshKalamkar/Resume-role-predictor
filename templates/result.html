@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result - Resume Role Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="root">
+        <header>
+            <div class="container text-center">
+                <div class="header-title-group">
+                    <div class="header-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4.5 4.5 0 0 0-4.5 4.5c0 1.43 1.9 2.5 1.9 2.5s-1.9 1.07-1.9 2.5A4.5 4.5 0 0 0 12 16a4.5 4.5 0 0 0 4.5-4.5c0-1.43-1.9-2.5-1.9-2.5s1.9-1.07 1.9-2.5A4.5 4.5 0 0 0 12 2Z"/><path d="M12 16v1a2 2 0 0 0 2 2h1"/><path d="M12 16v1a2 2 0 0 1-2 2H9"/><path d="M12 2v1a2 2 0 0 1-2-2H9"/><path d="M12 2v1a2 2 0 0 0 2-2h1"/></svg>
+                    </div>
+                    <h1 class="gradient-text">Resume Role Predictor</h1>
+                </div>
+                <p class="header-description">
+                    Our machine learning model analyzed your skills, experience, and keywords to find the perfect career path for you.
+                </p>
+            </div>
+        </header>
+
+        <main>
+            <div class="container">
+                <div class="main-content-wrapper">
+                    <div class="result-card">
+                        <h2 class="section-title">Prediction Result</h2>
+                        <p class="result-label">PREDICTED ROLE</p>
+                        <h3 class="result-role gradient-text">{{ role }}</h3>
+                        
+                        <div class="confidence-display">
+                            <div class="confidence-bar" style="width: {{ confidence }}%;"></div>
+                            <span class="confidence-text">{{ confidence }}% Confidence</span>
+                        </div>
+                        
+                        <a href="/" class="button-predict button-reset">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-9 9H7.5a4.5 4.5 0 1 1 0-9H12"/><path d="M3 12a9 9 0 0 1 9-9h4.5a4.5 4.5 0 1 1 0 9H12"/></svg>
+                            Try Another Resume
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="container text-center">
+                <p>Powered by Advanced AI & Machine Learning © 2025 Resume Role Predictor</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
